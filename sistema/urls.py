@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from apk.views import convertir_pdf_a_imagen
+from apk.views import convertir_pdf_a_imagen, vista
 
 urlpatterns = [
     path('convertir-pdf-a-imagen/', convertir_pdf_a_imagen, name='convertir_pdf_a_imagen'),
+    path('vista/', vista, name="vista")
     # Otras URLs de tu aplicación...
 ]

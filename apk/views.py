@@ -3,9 +3,9 @@ from pdf2image import convert_from_path
 import os
 
 def convertir_pdf_a_imagen(request):
-    poppler_path = r"C:\Users\jgali\Documents\Instaladores\poopler\poppler-0.68.0\bin"
-    pdf_path = r"C:\Users\jgali\Downloads\Recibo Luz.pdf"
-    saving_folder = r"C:\Users\jgali\Downloads\salida"
+    poppler_path = r"C:\Users\alopez\Videos\poppler-0.68.0\bin"
+    pdf_path = r"./ReciboLuz.pdf"
+    saving_folder = r"C:\Users\alopez\Downloads\salida"
 
     try:
         pages = convert_from_path(pdf_path=pdf_path, poppler_path=poppler_path)
@@ -25,3 +25,9 @@ def convertir_pdf_a_imagen(request):
         return render(request, 'error.html', {'error': str(e)})
 
     return render(request, 'template.html', {'image_urls': image_urls})
+
+
+
+def vista(request):
+    if request.method == 'GET':
+         return render(request, 'index.html')
